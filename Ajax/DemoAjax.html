@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta http-equiv="X-UA-CompaƟble" content="IE=edge">
+ <meta name="viewport" content="width=device-width, iniƟal-scale=1.0"> 
+ <title>Document</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body> 
+ <h1>Registration</h1> 
+ <p id="success"></p> 
+ <form onsubmit="process(); return false"> 
+ <div class="container"> 
+ <div class="box"> 
+ <label>Name:</label> 
+ <input placeholder="Name" type="text" name="name" id="name" required /> 
+ </div> 
+ <div class="box"> 
+ <label>Email:</label> 
+ <input placeholder="Email" type="email" name="email" id="email" required /> 
+ </div> 
+<div class="container signin"> 
+ <button id="submit" type="submit" class="btn-submit" value="Submit" onclick="myFunction()">Submit</button>
+ </div> 
+ </form> 
+<script> 
+ function process() {
+ const name = document.getElementById("name").value 
+ const email = document.getElementById("email").value 
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "process.php", true); 
+ xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
+ xhttp.send("name=" + name + "&email=" + email );
+}
+function myFunction(){
+    alert("Data submitted sucesssfully");
+ }
+</script> 
+</body> 
+</html>
